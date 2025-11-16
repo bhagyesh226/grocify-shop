@@ -1,5 +1,5 @@
 import React from 'react'
-import Heading from '../Halper/heading'
+import Heading from '../Halper/Heading'
 import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3, TbCircleNumber4 } from "react-icons/tb";
 import { PiFactory, PiPlant } from "react-icons/pi";
 import { SlBadge } from "react-icons/sl";

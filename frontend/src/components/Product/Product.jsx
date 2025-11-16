@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Heading from '../Halper/heading'
+import Heading from '../Halper/Heading'
 import ProductList from '../Halper/Product'
 import Card from '../Halper/Card'
 import Button from '../Halper/Button'

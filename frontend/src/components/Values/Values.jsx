@@ -1,5 +1,5 @@
 import React from 'react'
-import Heading from '../Halper/heading'
+import Heading from '../Halper/Heading'
 import { FaHeart } from "react-icons/fa";
 import { FaLeaf } from "react-icons/fa";
 import { FaShieldAlt } from "react-icons/fa";
