@@ -1,6 +1,6 @@
 import React from 'react'
 import Heading from '../Halper/Heading'
-import fruitscat from '../../assets/fruits-and-Veggies.png'
+import fruitscat from '../../assets/fruits-and-veggies.png'
 import dairycat from '../../assets/dairy-and-eggs.png'
 import seafoodcat from '../../assets/meat-and-seafood.png'
 import { Link } from 'react-router-dom'
