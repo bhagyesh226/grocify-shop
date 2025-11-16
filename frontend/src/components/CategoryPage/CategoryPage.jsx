@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '../Banner/Banner'
 import Card from '../Halper/Card'
-import Product from '../Halper/Product'
+// import Product from '../Halper/Product'
 import products from '../Halper/Product'
 
 const CategoryPage = ({ title, bgimg, categories=[] }) => {
