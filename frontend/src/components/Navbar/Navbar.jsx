@@ -5,24 +5,30 @@ import { FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
+import AddToCart from '../Halper/AddToCart';
 
 const Navbar = () => {
-    const [showMenu , setMenu] = useState(false)
+    const [showMenu, setMenu] = useState(false)
+    const [showCart, setCart] = useState(false)
     const [scrollPosition, setScrollPosition] = useState(false);
     const [searchText, setSearchText] = useState("");
-     const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setMenu(!showMenu)
     }
 
-const handleSearch = () => {
+    const toggleCart = () => {
+        setCart(!showCart)
+    }
+
+    const handleSearch = () => {
         if (searchText.trim() === "") return;
         navigate(`/Searchbar?query=${searchText}`);
         setSearchText("");
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         const handleScroll = () => {
             setScrollPosition(window.scrollY > 50);
 
@@ -62,26 +68,26 @@ const handleSearch = () => {
                     <div className='md:flex border-2   border-orange-400 rounded-4xl hidden items-center '>
                         <input type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} placeholder='Search' className='  px-2 py-1 outline-none' />
                         <button onClick={handleSearch} className='  px-3 py-2 m-0.5 ml-2 h-10 w-10 rounded-full text-xl justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer '>
-                            <FaSearch/>
-                            </button>
+                            <FaSearch />
+                        </button>
                     </div>
 
                     <a href="#" className='text-zinc-800 text-2xl'>
                         <FaHeart />
                     </a>
-                    <a href="#" className='text-zinc-800 text-2xl' >
+                    <a href="#" onClick={toggleCart} className='text-zinc-800 text-2xl' >
                         <IoMdCart />
                     </a>
 
                     {/* Hamburger */}
                     <a href="#" className='text-zinc-800 text-2xl md:hidden ' onClick={toggleMenu}>
-                        {showMenu ? <LuMenu/>: <IoClose/>}
+                        {showMenu ? <LuMenu /> : <IoClose />}
                     </a>
                 </div>
 
                 {/* mobile menu */}
                 <ul className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider md:hidden  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl top-30 transform -translate-x-1/2 transition-all duration-700  ${showMenu ? '-left-1/2' : 'left-1/2'} `}>
-                   
+
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>About Us</a>
                     </li>
@@ -94,12 +100,16 @@ const handleSearch = () => {
                     <li className='flex border-2   border-zinc-500 rounded-4xl md:hidden items-center '>
                         <input type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} placeholder='Search' className='  px-2 py-1 outline-none' />
                         <button onClick={handleSearch} className='  px-3 py-2 m-0.5 ml-2 h-10 w-10 rounded-full text-xl justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer '>
-                            <FaSearch/>
-                            </button>
+                            <FaSearch />
+                        </button>
                     </li>
                 </ul>
 
-                
+                {/* cart item  */}
+                <div className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl md:top-20 sm:top-20 top-50 transform -translate-x-1/2 transition-all duration-700  ${showCart ? ' md:-right-30 -right-2/6 sm:-right-2/9 ' : ' md:-right-1/2 right-1/1'} `}>
+                    <AddToCart />
+                </div>
+
             </nav>
         </header>
     )
