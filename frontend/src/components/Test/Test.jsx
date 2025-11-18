@@ -58,7 +58,7 @@ const Test = () => {
                                             <span className='flex text-yellow-400 '>
                                                 {
                                                     Array.from({ length: item.rating }, (_, index) => (
-                                                        <FaStar />
+                                                        <FaStar key={index}  />
                                                     ))
                                                 }
                                             </span>

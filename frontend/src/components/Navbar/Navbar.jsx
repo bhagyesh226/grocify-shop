@@ -4,14 +4,23 @@ import { IoMdCart } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [showMenu , setMenu] = useState(false)
     const [scrollPosition, setScrollPosition] = useState(false);
+    const [searchText, setSearchText] = useState("");
+     const navigate = useNavigate();
 
     const toggleMenu = () => {
         setMenu(!showMenu)
     }
+
+const handleSearch = () => {
+        if (searchText.trim() === "") return;
+        navigate(`/Searchbar?query=${searchText}`);
+        setSearchText("");
+    };
 
     useEffect(()=>{
         const handleScroll = () => {
@@ -51,8 +60,8 @@ const Navbar = () => {
 
                 <div className='flex justify-between items-center gap-x-6 '>
                     <div className='md:flex border-2   border-orange-400 rounded-4xl hidden items-center '>
-                        <input type="text" placeholder='Search' className='  px-2 py-1 outline-none' />
-                        <button className='  px-3 py-2 m-0.5 ml-2 h-10 w-10 rounded-full text-xl justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer '>
+                        <input type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} placeholder='Search' className='  px-2 py-1 outline-none' />
+                        <button onClick={handleSearch} className='  px-3 py-2 m-0.5 ml-2 h-10 w-10 rounded-full text-xl justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer '>
                             <FaSearch/>
                             </button>
                     </div>
@@ -60,7 +69,7 @@ const Navbar = () => {
                     <a href="#" className='text-zinc-800 text-2xl'>
                         <FaHeart />
                     </a>
-                    <a href="#" className='text-zinc-800 text-2xl'>
+                    <a href="#" className='text-zinc-800 text-2xl' >
                         <IoMdCart />
                     </a>
 
@@ -83,13 +92,14 @@ const Navbar = () => {
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>Contact Us</a>
                     </li>
                     <li className='flex border-2   border-zinc-500 rounded-4xl md:hidden items-center '>
-                        <input type="text" placeholder='Search' className='  px-2 py-1 outline-none' />
-                        <button className='  px-3 py-2 m-0.5 ml-2 h-10 w-10 rounded-full text-xl justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer '>
+                        <input type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} placeholder='Search' className='  px-2 py-1 outline-none' />
+                        <button onClick={handleSearch} className='  px-3 py-2 m-0.5 ml-2 h-10 w-10 rounded-full text-xl justify-center items-center bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer '>
                             <FaSearch/>
                             </button>
                     </li>
                 </ul>
 
+                
             </nav>
         </header>
     )

@@ -7,6 +7,8 @@ import Dairy from './components/Dairy/Dairy'
 import SeeFood from './components/SeaFood/SeaFood'
 import AllProducts from './components/AllProduct/AllProducts'
 import Layout from './components/Layout/Layout'
+import Searchbar from './components/Searchbar/Searchbar'
+
 
 
 function App() {
@@ -35,6 +37,10 @@ function App() {
         {
           path: '/AllProduct',
           element: < AllProducts />
+        },
+        {
+          path : '/Searchbar',
+          element : <Searchbar/>
         }
       ]
     }
