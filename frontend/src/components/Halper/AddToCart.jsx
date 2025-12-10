@@ -7,7 +7,7 @@ const AddToCart = () => {
         return (
             <div 
                 key={product.id} 
-                className="flex gap-4 p-3 bg-white shadow-sm rounded-xl hover:shadow-md transition-all duration-300 cursor-pointer"
+                className="flex gap-4 p-3 bg-white shadow-sm  rounded-xl hover:shadow-md transition-all duration-300 cursor-pointer"
             >
                 {/* Image */}
                 <div className="w-20 h-20 flex items-center justify-center bg-orange-50 rounded-lg">

@@ -4,7 +4,7 @@ import { IoMdCart } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AddToCart from '../Halper/AddToCart';
 
 const Navbar = () => {
@@ -41,9 +41,9 @@ const Navbar = () => {
 
                 {/* logo */}
 
-                <a href="#" className='font-bold text-3xl'>
+                <Link to='/' className='font-bold text-3xl'>
                     gr<samp className='text-orange-400   '>O</samp>cify
-                </a>
+                </Link>
 
                 {/* Desktop menu */}
 
@@ -86,7 +86,7 @@ const Navbar = () => {
                 </div>
 
                 {/* mobile menu */}
-                <ul className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider md:hidden  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl top-30 transform -translate-x-1/2 transition-all duration-700  ${showMenu ? '-left-1/2' : 'left-1/2'} `}>
+                <ul className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider md:hidden  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl top-30 transform -translate-x-1/2 transition-all duration-700  ${showMenu ? 'hidden' : 'left-1/2'} `}>
 
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>About Us</a>
@@ -106,7 +106,7 @@ const Navbar = () => {
                 </ul>
 
                 {/* cart item  */}
-                <div className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl md:top-20 sm:top-20 top-50 transform -translate-x-1/2 transition-all duration-700  ${showCart ? ' md:-right-30 -right-2/6 sm:-right-2/9 ' : ' md:-right-1/2 right-1/1'} `}>
+                <div className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl md:top-20 sm:top-20 top-20 transform -translate-x-1/2 transition-all duration-700  ${showCart ? 'left-1/2' : 'hidden'} `}>
                     <AddToCart />
                 </div>
 
