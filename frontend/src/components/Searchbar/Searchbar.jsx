@@ -14,7 +14,7 @@ const Searchbar = () => {
     );
 
     return (
-        <div className='max-w-[1400px] mx-auto px-10 py-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3'>
+        <div className='max-w-[1400px] pt-20 mx-auto px-10 py-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3'>
             {filteredProducts.length > 0 ? (
                 filteredProducts.map(product => (
                     <Card
