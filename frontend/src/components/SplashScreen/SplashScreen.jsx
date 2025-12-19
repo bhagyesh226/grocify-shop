@@ -19,8 +19,8 @@ const SplashScreen = () => {
       />
 
       {/* Background G */}
-      <div className="absolute text-[12rem] md:text-[18rem] font-extrabold
-        text-white/60 select-none animate-grow">
+      <div className="absolute text-[12rem] md:text-[18rem] animate-ping  font-extrabold
+        text-white/60 select-none ">
         G
       </div>
 
@@ -44,14 +44,6 @@ const SplashScreen = () => {
       {/* Animations */}
       <style>
         {`
-          @keyframes grow {
-            0% { transform: scale(0.6); opacity: 0; }
-            100% { transform: scale(1); opacity: 0.3; }
-          }
-          .animate-grow {
-            animation: grow 1.6s ease-out forwards;
-          }
-
           @keyframes letterIn {
             0% {
               opacity: 0;
