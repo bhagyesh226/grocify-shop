@@ -24,8 +24,10 @@ const Navbar = () => {
 
     const handleSearch = () => {
         if (searchText.trim() === "") return;
+         setMenu(!showCart)
         navigate(`/Searchbar?query=${searchText}`);
         setSearchText("");
+       
     };
 
     useEffect(() => {
