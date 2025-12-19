@@ -34,7 +34,7 @@ const Hero = () => {
                 }
 
                 .animate-bounce-3 {
-                    animation: bounce 0.8s ease-in-out 3;
+                    animation: bounce 0.8s ease-in-out 10;
                 }
                 `}
             </style>
