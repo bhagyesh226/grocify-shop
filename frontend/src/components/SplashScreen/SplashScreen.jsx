@@ -13,7 +13,7 @@ const SplashScreen = () => {
 
       {/* Animated Border Box */}
       <div className="absolute w-[220px] h-[220px] md:w-[300px] md:h-[300px]
-        rounded-2xl border-b-2  border-t-2
+        rounded-2xl border-b-2  border-l-2
         shadow-[0_0_40px_rgba(255,94,0,0.6)]
         animate-spin-slow"
       />
