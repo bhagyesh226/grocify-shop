@@ -18,25 +18,28 @@ const Hero = () => {
             </div>
 
             {/* hero img */}
-            <div className='flex-1 animate-bounce-3 transform-3d  '>
-                <img src={grocery} alt="hero img shadow-xl/30" />
+            <div className='flex-1 animate-bounce-3  '>
+                <img src={grocery} alt="hero img" />
             </div>
+
             <style>
                 {`
-                    @keyframes bounceSlow {
+                @keyframes bounce {
                     0%, 100% {
                     transform: translateY(0);
                     }
                     50% {
                     transform: translateY(-25px);
                     }
-                    }
+                }
 
-                    .animate-bounce-3 {
-                    animation: bounce 0.8s ease-in-out 2;
-                    }
-`}
+                .animate-bounce-3 {
+                    animation: bounce 0.8s ease-in-out 3;
+                }
+                `}
             </style>
+
+
         </div>
     )
 }
