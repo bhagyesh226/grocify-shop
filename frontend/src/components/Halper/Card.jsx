@@ -18,7 +18,7 @@ const Card = ({ image, name, price }) => {
         });
     }
     return (
-        <div className='bg-zinc-100 flex flex-col rounded-xl justify-between p-2 md:mt-10 mt-5  '>
+        <div className='bg-zinc-100 flex flex-col rounded-xl justify-between hover:border-2 border-zinc-700 p-2 md:mt-10 mt-5 hover:shadow-2xl shadow-zinc-500 transform-all cursor-pointer duration-300'>
 
             {/* card icons */}
             <div className='flex justify-between'>
@@ -30,7 +30,7 @@ const Card = ({ image, name, price }) => {
                 </button>
             </div>
             {/* card img */}
-            <div>
+            <div className='hover:scale-105 hover:rotate-2 hover:opacity-80 transform-all cursor-pointer duration-300'>
                 <img src={image} alt="" />
             </div>
 
