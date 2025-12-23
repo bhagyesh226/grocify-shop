@@ -43,7 +43,7 @@ const Navbar = () => {
 
                 {/* logo */}
 
-                <Link to='/' className='font-bold text-3xl'>
+                <Link to='/' onClick={toggleMenu} className='font-bold text-3xl'>
                     gr<samp className='text-orange-400   '>O</samp>cify
                 </Link>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
                 <ul className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider md:hidden  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl top-30 transform -translate-x-1/2 transition-all duration-700  ${showMenu ? 'hidden' : 'left-1/2'} `}>
 
                     <li>
-                        <Link to="/AboutUs" className=' text-zinc-600 hover:text-amber-500'>About Us</Link>
+                        <Link to="/AboutUs" onClick={toggleMenu} className=' text-zinc-600 hover:text-amber-500'>About Us</Link>
                     </li>
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>Process</a>

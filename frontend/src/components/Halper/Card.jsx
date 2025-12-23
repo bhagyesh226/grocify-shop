@@ -36,8 +36,8 @@ const Card = ({ image, name, price }) => {
 
             {/* card contant */}
             <div className='flex flex-col p-2 items-center'>
-                <h3 className='text-2xl text-zinc-700 font-semibold'>{name}</h3>
-                <p className='text-2xl text-zinc-700 font-bold'>${price.toFixed(2)}</p>
+                <h3 className='md:text-2xl text-xl text-zinc-700 font-semibold'>{name}</h3>
+                <p className='md:text-2xl text-xl text-zinc-700 font-bold'>${price.toFixed(2)}</p>
                 <div className='mt-3' onClick={addToCart}>
                     <Button contant='Shop' />
                 </div>

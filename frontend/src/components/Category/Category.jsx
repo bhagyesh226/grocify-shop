@@ -17,7 +17,7 @@ const Category = () => {
         
         {/* card contant */}
         <div className=' p-8 md:pt-17 pt-0'>
-          <h2 className='text-zinc-800 text-3xl font-bold' >{card.title}</h2>
+          <h2 className='text-zinc-800 md:text-3xl text-1xl font-bold' >{card.title}</h2>
           <p className='text-zinc-400 mb-9'>{card.description}</p>
           <Link className='bg-gradient-to-b from-orange-400 to-orange-500 cursor-pointer text-white px-8 py-3 text-lg rounded-lg hover:scale-105 hover:to-orange-600 transition-all duration-300 ' to={card.path}>See All</Link>
         </div>
