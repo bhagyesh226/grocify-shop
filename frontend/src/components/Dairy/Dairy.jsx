@@ -1,5 +1,4 @@
 import React from 'react'
-import Banner from '../Banner/Banner'
 import CategoryPage from '../CategoryPage/CategoryPage'
 import bgDiry from '../../assets/dairy-banner.jpg'
 

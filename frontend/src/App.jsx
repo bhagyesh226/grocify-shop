@@ -9,6 +9,7 @@ import AllProducts from './components/AllProduct/AllProducts'
 import Layout from './components/Layout/Layout'
 import Searchbar from './components/Searchbar/Searchbar'
 import SplashScreen from './components/SplashScreen/SplashScreen'
+import AboutUs from './components/AboutUs/AboutUs'
 
 
 
@@ -51,6 +52,10 @@ function App() {
         {
           path : '/Searchbar',
           element : <Searchbar/>
+        },
+        {
+          path : '/AboutUs',
+          element : <AboutUs/>
         }
       ]
     }

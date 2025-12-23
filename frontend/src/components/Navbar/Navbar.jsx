@@ -51,10 +51,10 @@ const Navbar = () => {
 
                 <ul className='md:flex items-center font-semibold tracking-wider hidden  gap-x-8'>
                     <li>
-                        <a href="#" className=' text-amber-600 hover:text-amber-500' >Home</a>
+                        <Link to="/" className=' text-amber-600 hover:text-amber-500' >Home</Link>
                     </li>
                     <li>
-                        <a href="#" className=' text-zinc-600 hover:text-amber-500'>About Us</a>
+                        <Link to="/AboutUs" className=' text-zinc-600 hover:text-amber-500'>About Us</Link>
                     </li>
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>Process</a>
@@ -91,7 +91,7 @@ const Navbar = () => {
                 <ul className={`flex flex-col p-10 items-center gap-x-3 gap-y-7 font-semibold  tracking-wider md:hidden  absolute bg-orange-500/30 backdrop-blur-xl rounded-xl top-30 transform -translate-x-1/2 transition-all duration-700  ${showMenu ? 'hidden' : 'left-1/2'} `}>
 
                     <li>
-                        <a href="#" className=' text-zinc-600 hover:text-amber-500'>About Us</a>
+                        <Link to="/AboutUs" className=' text-zinc-600 hover:text-amber-500'>About Us</Link>
                     </li>
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>Process</a>
