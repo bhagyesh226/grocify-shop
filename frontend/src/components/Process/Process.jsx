@@ -13,10 +13,9 @@ const Process = () => {
                 <div className='flex flex-col md:flex-row items-center gap-x-5 mt-5'>
                     <span className='flex bg-gradient-to-b from-orange-400 to-orange-500 text-white text-2xl w-15 h-15 rounded-full  justify-center items-center'>{item.icon}</span>
                     <div className='flex-1 '>
-                        <h4 className='text-zinc-800 font-bold'>{item.title}</h4>
+                        <h4 className='text-zinc-800 md:text-2xl font-bold'>{item.title}</h4>
                         <p className='text-zinc-700 '>{item.para}</p>
                     </div>
-
                 </div>
             </div>
         )
@@ -27,7 +26,7 @@ const Process = () => {
                 <Heading heading='Our' heading2=' Process' />
 
                 {/* steps */}
-                <div className='flex flex-col md:flex-row gap-y-10 justify-center items-center mt-10 pt-20  '>
+                <div className='flex flex-col md:flex-row gap-y-10 justify-center items-center mt-10 md:pt-15  '>
                     {stepItems}
                 </div>
             </div>
@@ -42,28 +41,28 @@ const steps = [
         id: 1,
         Number: <TbCircleNumber1 />,
         title: 'Sourcing',
-        para: 'It is a long established fact that a reader',
+        para: 'Procuring quality raw materials from trusted and verified suppliers.',
         icon: <PiPlant />
     },
     {
         id: 2,
         Number: <TbCircleNumber2 />,
         title: 'Manufacturing',
-        para: 'It is a long established fact that a reader',
+        para: 'Producing finished goods using efficient and modern manufacturing methods.',
         icon: <PiFactory />
     },
     {
         id: 3,
         Number: <TbCircleNumber3 />,
         title: 'Quality Control',
-        para: 'It is a long established fact that a reader',
+        para: 'Ensuring products meet strict quality standards and specifications.',
         icon: <SlBadge />
     },
     {
         id: 4,
         Number: <TbCircleNumber4 />,
         title: 'Logistics',
-        para: 'It is a long established fact that a reader',
+        para: 'Handling packaging, storage, and timely delivery of products.',
         icon: <FaTruckMoving />
     }
 ]

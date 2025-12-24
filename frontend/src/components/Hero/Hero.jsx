@@ -4,7 +4,8 @@ import Button from '../Halper/Button'
 
 const Hero = () => {
     return (
-        <div className='max-w-[1400px] min-h-screen px-10  flex md:flex-row flex-col  items-center md:pt-25 pt-35'>
+        <div>
+            <div className='max-w-[1400px] mx-auto min-h-screen px-10  flex md:flex-row flex-col  items-center md:pt-25 pt-35'>
             {/* Hero content */}
             <div className='flex-1'>
                 <samp className='bg-orange-100 text-orange-500 text-lg px-5 py-2 mt-2 mb-3 rounded-full'>Exprot best quality..</samp>
@@ -40,6 +41,7 @@ const Hero = () => {
             </style>
 
 
+        </div>
         </div>
     )
 }

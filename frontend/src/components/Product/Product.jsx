@@ -23,7 +23,7 @@ const Product = () => {
 
     return (
         <div className='max-w-[1400px] mx-auto py-20 px-10  mt-10'>
-            <Heading heading='Our' heading2=' Values' />
+            <Heading heading='Our' heading2=' Product' />
 
             {/* tabe */}
             <div className='flex flex-wrap  gap-3   justify-center '>

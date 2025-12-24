@@ -43,8 +43,8 @@ const Navbar = () => {
 
                 {/* logo */}
 
-                <Link to='/' onClick={toggleMenu} className='font-bold text-3xl'>
-                    gr<samp className='text-orange-400   '>O</samp>cify
+                <Link to='/'  className='font-bold text-3xl'>
+                    gr<samp className='text-orange-400'>O</samp>cify
                 </Link>
 
                 {/* Desktop menu */}
@@ -57,7 +57,7 @@ const Navbar = () => {
                         <Link to="/AboutUs" className=' text-zinc-600 hover:text-amber-500'>About Us</Link>
                     </li>
                     <li>
-                        <a href="#" className=' text-zinc-600 hover:text-amber-500'>Process</a>
+                        <Link to="/Process2" className=' text-zinc-600 hover:text-amber-500'>Process</Link>
                     </li>
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>Contact Us</a>
@@ -77,14 +77,14 @@ const Navbar = () => {
                     <a href="#" className='text-zinc-800 text-2xl'>
                         <FaHeart />
                     </a>
-                    <a href="#" onClick={toggleCart} className='text-zinc-800 text-2xl' >
+                    <button onClick={toggleCart} className='text-zinc-800 text-2xl' >
                         <IoMdCart />
-                    </a>
+                    </button>
 
                     {/* Hamburger */}
-                    <a href="#" className='text-zinc-800 text-2xl md:hidden ' onClick={toggleMenu}>
+                    <button  className='text-zinc-800 text-2xl md:hidden ' onClick={toggleMenu}>
                         {showMenu ? <LuMenu /> : <IoClose />}
-                    </a>
+                    </button>
                 </div>
 
                 {/* mobile menu */}
@@ -94,7 +94,7 @@ const Navbar = () => {
                         <Link to="/AboutUs" onClick={toggleMenu} className=' text-zinc-600 hover:text-amber-500'>About Us</Link>
                     </li>
                     <li>
-                        <a href="#" className=' text-zinc-600 hover:text-amber-500'>Process</a>
+                        <Link to="/Process2" onClick={toggleMenu} className=' text-zinc-600 hover:text-amber-500'>Process</Link>
                     </li>
                     <li>
                         <a href="#" className=' text-zinc-600 hover:text-amber-500'>Contact Us</a>

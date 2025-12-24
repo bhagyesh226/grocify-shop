@@ -4,7 +4,7 @@ import Category from '../Category/Category'
 import Values from '../Values/Values'
 import Product from '../Product/Product'
 import Discount from '../Discount/Discount'
-import Process from '../Prosecc/Process'
+import Process from '../Process/Process'
 import Test from '../Test/Test'
 
 const Home = () => {

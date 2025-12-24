@@ -11,7 +11,7 @@ import A2 from '../../assets/A2.jpeg'
 
 function AboutUs() {
   return (
-    <div className="max-w-[1400px] mx-auto pt-18 md:pt-35">
+    <div className=" pt-18 md:pt-35">
 
       {/* HERO SECTION */}
       <div
@@ -19,7 +19,8 @@ function AboutUs() {
         style={{ backgroundImage: `url(${AboutUs1})` }}
       />
 
-      {/* SECTION 1 — HOW WE STARTED */}
+      <div className='max-w-[1400px] mx-auto'>
+        {/* SECTION 1 — HOW WE STARTED */}
       <div className="flex flex-col md:flex-row items-center gap-10 py-16 px-6">
         <div className="md:w-1/2">
           <h2 className="md:text-4xl text-2xl font-extrabold mb-4">How We Started</h2>
@@ -84,6 +85,7 @@ function AboutUs() {
             </div>
           ))}
         </div>
+      </div>
       </div>
 
     </div>

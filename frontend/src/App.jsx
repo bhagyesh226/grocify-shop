@@ -10,6 +10,7 @@ import Layout from './components/Layout/Layout'
 import Searchbar from './components/Searchbar/Searchbar'
 import SplashScreen from './components/SplashScreen/SplashScreen'
 import AboutUs from './components/AboutUs/AboutUs'
+import Process2 from './components/Process2/Process2'
 
 
 
@@ -56,6 +57,10 @@ function App() {
         {
           path : '/AboutUs',
           element : <AboutUs/>
+        },
+        {
+          path: '/Process2',
+          element : <Process2/>
         }
       ]
     }
