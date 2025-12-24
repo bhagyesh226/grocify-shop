@@ -3,7 +3,7 @@ import products from '../Halper/Product'
 
 const AddToCart = () => {
 
-    const renderProduct = products.slice(0, 7).map(product => {
+    const renderProduct = products.slice(0, 13).map(product => {
         return (
             <div 
                 key={product.id} 

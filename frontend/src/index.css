@@ -16,3 +16,20 @@
   -ms-overflow-style: none;  
   scrollbar-width: none;     
 }
+
+
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #050504;
+    }
+    to {
+      text-shadow: 0 0 20px #ffffff;
+    }
+  }
+}

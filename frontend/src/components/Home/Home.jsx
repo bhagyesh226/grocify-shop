@@ -9,14 +9,21 @@ import Test from '../Test/Test'
 
 const Home = () => {
   return (
-    <div>
-        <Hero/>
-        <Category/>
-        <Values/>
-        <Product/>
-        <Discount/>
-        <Process/>
-        <Test/>
+    <div >
+      
+      
+
+      {/* Page Content */}
+      <div>
+        <Hero />
+        <Category />
+        <Values />
+        <Product />
+        <Discount />
+        <Process />
+        <Test />
+      </div>
+
     </div>
   )
 }

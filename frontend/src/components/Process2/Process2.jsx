@@ -86,9 +86,8 @@ const Process2 = () => {
               ))}
             </div>
           </div>
-
           {/* Force scroll */}
-          <div className="h-[60vh]" />
+          <div className="h-[90vh]" />
         </div>
       </div>
     </div>

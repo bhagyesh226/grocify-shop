@@ -62,7 +62,7 @@ function AboutUs() {
 
       {/* SECTION 3 — OUR CITIES */}
       <div className="py-20 px-6">
-        <h2 className="md:text-7xl text-4xl font-bold text-center italic text-shadow-amber-400 mb-10">
+        <h2 className="md:text-7xl text-4xl font-bold text-center italic  mb-10">
           We Serve Across Cities
         </h2>
 
