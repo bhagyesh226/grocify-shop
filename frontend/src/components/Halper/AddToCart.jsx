@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoTrash } from "react-icons/io5";
-
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const AddToCart = () => {
   const [cart, setCart] = useState([]);
@@ -11,34 +11,48 @@ const AddToCart = () => {
   };
 
   useEffect(() => {
-    loadCart(); // initial load
-
+    loadCart();
     window.addEventListener('cartUpdated', loadCart);
-    window.addEventListener('storage', loadCart); // multi-tab support
-
-    return () => {
-      window.removeEventListener('cartUpdated', loadCart);
-      window.removeEventListener('storage', loadCart);
-    };
+    return () => window.removeEventListener('cartUpdated', loadCart);
   }, []);
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.qty,
-    0
-  );
-const removeproduct = (id) => {
-  const updatedCart = cart.filter(item => item.id !== id);
+  // 🔼 Increase qty
+  const increaseQty = (id) => {
+    const updatedCart = cart.map(item =>
+      item.id === id ? { ...item, qty: item.qty + 1 } : item
+    );
 
-  setCart(updatedCart);
-  localStorage.setItem('cart', JSON.stringify(updatedCart));
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event('cartUpdated'));
+  };
 
-  console.log('item remove',id)
-};
+  // 🔽 Decrease qty
+  const decreaseQty = (id) => {
+    const updatedCart = cart
+      .map(item =>
+        item.id === id ? { ...item, qty: item.qty - 1 } : item
+      )
+      .filter(item => item.qty > 0);
+
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event('cartUpdated'));
+  };
+
+  // ❌ Remove item
+  const removeItem = (id) => {
+    const updatedCart = cart.filter(item => item.id !== id);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event('cartUpdated'));
+  };
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
   return (
     <div className="bg-zinc-200 p-4 rounded-xl shadow-md max-w-md mx-auto">
-      <h1 className="text-2xl font-bold text-center mb-4 text-gray-800">
-        My Cart
-      </h1>
+      <h1 className="text-2xl font-bold text-center mb-4">My Cart</h1>
 
       {cart.length === 0 ? (
         <p className="text-center text-gray-500">Cart is empty 🛒</p>
@@ -46,45 +60,59 @@ const removeproduct = (id) => {
         <>
           <div className="space-y-4 max-h-80 overflow-y-auto scrollbar-hide pr-2">
             {cart.map(product => (
-              <div
-                key={product.id}
-                className=" p-2 bg-white shadow-sm rounded-xl"
-              >
-                <div className=''>
-                  <h1 onClick={()=>{removeproduct(product.id)}} className='text-red-500 cursor-pointer hover:text-red-600 text-right'><IoTrash /></h1>
-                </div>
-                <div className='flex gap-4 p-3'>
-                  <div className="w-20 h-20 flex items-center justify-center bg-orange-50 rounded-lg">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-16 h-16 object-contain"
-                  />
+              <div key={product.id} className="bg-white p-3 rounded-xl shadow-sm">
+
+                {/* Delete */}
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => removeItem(product.id)}
+                    className="text-red-500 hover:text-red-600"
+                  >
+                    <IoTrash />
+                  </button>
                 </div>
 
-                <div className="flex flex-col justify-center flex-1">
-                  <h2 className="text-lg font-semibold text-gray-800">
-                    {product.name}
-                  </h2>
+                <div className="flex gap-4">
+                  <div className="w-20 h-20 bg-orange-50 flex items-center justify-center rounded-lg">
+                    <img src={product.image} className="w-16 h-16 object-contain" />
+                  </div>
 
-                  <p className="text-sm text-gray-500">
-                    ₹{product.price} × {product.qty}
-                  </p>
+                  <div className="flex-1">
+                    <h2 className="font-semibold">{product.name}</h2>
+                    <p className="text-gray-500">₹{product.price}</p>
 
-                  <h4 className="text-orange-500 font-bold text-xl">
-                    ₹{(product.price * product.qty).toFixed(2)}
-                  </h4>
-                </div>
+                    {/* Quantity Controls */}
+                    <div className="flex items-center gap-3 mt-2">
+                      <button
+                        onClick={() => decreaseQty(product.id)}
+                        className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded"
+                      >
+                        <FaMinus />
+                      </button>
+
+                      <span className="font-semibold">{product.qty}</span>
+
+                      <button
+                        onClick={() => increaseQty(product.id)}
+                        className="w-8 h-8 flex items-center justify-center bg-gray-200 rounded"
+                      >
+                        <FaPlus />
+                      </button>
+                    </div>
+
+                    <p className="mt-2 font-bold text-orange-600">
+                      ₹{(product.price * product.qty).toFixed(2)}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 flex justify-between items-center border-t pt-4">
-            <span className="text-lg font-semibold text-gray-700">
-              Total
-            </span>
-            <span className="text-xl font-bold text-orange-600">
+          {/* Total */}
+          <div className="mt-4 flex justify-between border-t pt-4">
+            <span className="font-semibold">Total</span>
+            <span className="font-bold text-orange-600">
               ₹{total.toFixed(2)}
             </span>
           </div>
