@@ -3,20 +3,26 @@ import { FaHeart, FaPlus } from 'react-icons/fa'
 import Button from './Button'
 import { ToastContainer, toast } from 'react-toastify';
 
-const Card = ({ image, name, price }) => {
+const Card = ({ image, name, price ,id}) => {
 
-    const addToCart = () => {
-        toast('Product is added', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-    }
+   const addToCart = () => {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const product = { id, image, name, price, qty: 1 };
+
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.dispatchEvent(new Event('cartUpdated'));
+
+  toast.success('Product added to cart 🛒');
+};
+
     return (
         <div className='bg-zinc-100 flex flex-col rounded-xl justify-between hover:border-2 border-zinc-700 p-2 md:mt-10 mt-5 hover:shadow-2xl shadow-zinc-500 transform-all cursor-pointer duration-300'>
 

@@ -16,7 +16,7 @@ const Product = () => {
     const renderCards = filteredProducts.slice(0 , 8).map(product => {
         return(
             
-            <Card key={product.id} image={product.image} name={product.name} price={product.price} />
+            <Card key={product.id} id={product.id} image={product.image} name={product.name} price={product.price} />
           
         )
     })
